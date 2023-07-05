@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorpane" prefHeight="650.0" prefWidth="400.0" style="-fx-background-color: #ace1af;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ichatclient.controller.MessageFormController">
+   <children>
+      <ImageView fitHeight="650.0" fitWidth="400.0" opacity="0.1" pickOnBounds="true">
+         <image>
+            <Image url="@../assert/bg.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="134.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assert/iChat-logo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="186.0" layoutY="23.0" prefHeight="30.0" prefWidth="106.0" text="iChat">
+         <font>
+            <Font name="DejaVu Sans Mono Bold" size="25.0" />
+         </font>
+      </Label>
+      <ScrollPane layoutX="14.0" layoutY="69.0" prefHeight="510.0" prefWidth="374.0" style="-fx-background-color: #90ee90;">
+         <content>
+            <VBox fx:id="vBox" prefHeight="503.0" prefWidth="367.0" />
+         </content>
+      </ScrollPane>
+      <TextField fx:id="txtMsg" focusTraversable="false" layoutX="14.0" layoutY="593.0" onAction="#txtMsgOnAction" prefHeight="37.0" prefWidth="261.0" promptText="Enter your message here" style="-fx-background-color: #e9ffdb;" />
+      <Pane layoutX="278.0" layoutY="594.0" prefHeight="35.0" prefWidth="106.0" style="-fx-background-color: #e9ffdb;">
+         <children>
+            <ImageView fitHeight="30.0" fitWidth="31.0" layoutX="4.0" layoutY="3.0" onMouseClicked="#imgAttachementIconOnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assert/attachment.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="25.0" layoutX="73.0" layoutY="6.0" onMouseClicked="#imgSendIconOnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assert/send2.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="31.0" layoutX="36.0" layoutY="3.0" onMouseClicked="#imgImojiIconOnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assert/imoji.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </Pane>
+      <AnchorPane fx:id="emojiAnchorPane" layoutX="88.0" layoutY="423.0" prefHeight="170.0" prefWidth="250.0">
+         <children>
+            <GridPane fx:id="emojiGridPane" layoutX="-2.0" prefHeight="170.0" prefWidth="250.0">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+         </children>
+      </AnchorPane>
+      <JFXButton focusTraversable="false" layoutX="14.0" layoutY="25.0" onAction="#btnLogoutOnAction" text=".">
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="25.0" opacity="0.6" pickOnBounds="true">
+               <image>
+                  <Image url="@../assert/logout-40.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>
