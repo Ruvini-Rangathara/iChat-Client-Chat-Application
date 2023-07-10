@@ -23,7 +23,7 @@ public class WelcomeFormController {
         anchorpane.getChildren().clear();
         Stage stage = (Stage) anchorpane.getScene().getWindow();
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/sign-up-form.fxml"))));
-        stage.setTitle("Sign Un to iChat");
+        stage.setTitle("Sign Up to iChat");
         stage.show();
     }
 }

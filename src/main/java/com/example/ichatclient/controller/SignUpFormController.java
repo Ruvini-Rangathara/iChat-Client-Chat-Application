@@ -81,6 +81,7 @@ public class SignUpFormController implements Initializable {
             }else{
                 sendClientRegistrationMail();
 
+
                 anchorpane.getChildren().clear();
                 Stage stage = (Stage) anchorpane.getScene().getWindow();
                 stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/sign-in-form.fxml"))));

@@ -65,12 +65,12 @@ public class PasswordUpdateFormController implements Initializable {
     private void updatePassword() throws IOException, InterruptedException {
         if(updateDB()){
             lblResetSuccess.setVisible(true);
-            Thread.sleep(3000);
 
             anchorpane.getChildren().clear();
             Stage stage = (Stage) anchorpane.getScene().getWindow();
             stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/sign-in-form.fxml"))));
             stage.setTitle("Sign In to iChat");
+            Thread.sleep(3000);
             stage.show();
         }else{
             lblResetWrong.setVisible(true);
