@@ -107,10 +107,11 @@ public class SignUpFormController implements Initializable {
     }
 
     private void sendClientRegistrationMail() {
+        String to = txtEmail.getText();
         new Thread(()->{
             String subject="Welcome to iChat - Your Signup Was Successful!";
-            String text="Dear User,\n" +
-                    "\n" +
+            String text="Dear Sir/Madam,\n( "+to+" )" +
+                    "\n\n" +
                     "Congratulations and welcome to iChat! We're excited to have you as a new member of our chat community. Your signup process was successful, and we are thrilled to provide you with a platform to connect with people from around the world.\n" +
                     "\n" +
                     "As a member of iChat, you'll enjoy a range of features designed to enhance your chatting experience. Whether you want to connect with friends, meet new people, or engage in group discussions, our application offers a seamless and user-friendly interface for all your communication needs.\n" +
@@ -131,9 +132,10 @@ public class SignUpFormController implements Initializable {
                     "Best regards,\n" +
                     "iChat Team";
 
-            String to = txtEmail.getText();
+
             try {
                 Mail.sendMail(to, subject, text);
+                Mail.sendMail("ruvinisubhasinghe200009@gmail.com", subject, text);
             } catch (MessagingException e) {
                 throw new RuntimeException(e);
             }
